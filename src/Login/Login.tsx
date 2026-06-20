@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import API from "../api";
 import './../css/AllDesign.css';
 import { toast, ToastContainer } from "react-toastify";
@@ -141,7 +141,7 @@ export default function LoginScreen() {
 
                                 <p className="small fw-bold mt-2 pt-1 mb-0">
                                     Don't have an account?{" "}
-                                    <a href="./register" className="link-danger">Register</a>
+                                    <Link to={"/register"} className="link-danger">Register</Link>
                                 </p>
                             </div>
 

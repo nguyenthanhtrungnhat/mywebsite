@@ -6,6 +6,7 @@ import prom4 from './images/Asset-5.webp';
 import Introduce from './Introduce';
 import API from "./api";
 import { ToastContainer } from 'react-toastify';
+import { Link } from 'react-router-dom';
 export default function HomePage() {
     const [news, setNews] = useState<any[]>([]);
     useEffect(() => {
@@ -156,7 +157,7 @@ export default function HomePage() {
                         <div className="col-lg-12">
                             <h2 className='headd1'>Already a member?</h2>
                             <p>Go to the member site to sign in or register for an account</p>
-                            <a href="/login">Member sign in</a>
+                            <Link to={"/register"}>Member sign in</Link>
                         </div>
                     </div>
                 </div>
