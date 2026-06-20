@@ -22,28 +22,23 @@ API.interceptors.response.use(
     (error) => {
         const status = error?.response?.status;
 
-        // Token hết hạn
+        // 401: unauthorized
         if (status === 401) {
             sessionStorage.clear();
-            window.location.href = "/login";
+            window.location.replace("/login");
             return Promise.reject(error);
         }
 
-        // Các lỗi server
-        if (
-            status === 500 ||
-            status === 502 ||
-            status === 503 ||
-            status === 504
-        ) {
-            window.location.href = "/error";
-            return Promise.reject(error);
+        // server errors
+        if ([500, 502, 503, 504].includes(status)) {
+            console.error("Server error:", status);
+            return Promise.reject(error); // ❌ do NOT redirect instantly
         }
 
-        // Backend tắt / mất mạng / timeout
+        // network error
         if (!error.response) {
-            window.location.href = "/error";
-            return Promise.reject(error);
+            console.error("Network error");
+            return Promise.reject(error); // ❌ don't auto redirect
         }
 
         return Promise.reject(error);
