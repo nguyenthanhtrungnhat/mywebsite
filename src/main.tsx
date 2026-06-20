@@ -60,7 +60,6 @@ const router = createBrowserRouter([
   {
     path: "/",
     children: [{
-      path: "/",
       element: <Layout />, // Wrap children with layout
       children: [
         { index: true, element: <HomePage /> },
@@ -200,7 +199,7 @@ const router = createBrowserRouter([
       },
     ],
   },
-],{ basename: "/mywebsite" });
+], { basename: "/mywebsite" });
 
 
 createRoot(document.getElementById("root")!).render(
