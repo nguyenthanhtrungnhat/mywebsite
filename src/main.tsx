@@ -54,10 +54,6 @@ import ErrorPage from "./ErrorPage";
 
 const router = createBrowserRouter([
   {
-    path: "/error",
-    element: <ErrorPage />,
-  },
-  {
     path: "/",
     children: [{
       path: "/",
@@ -200,6 +196,8 @@ const router = createBrowserRouter([
       },
     ],
   },
+
+ 
 ], { basename: "/mywebsite" });
 
 
