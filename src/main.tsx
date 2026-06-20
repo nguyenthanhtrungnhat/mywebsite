@@ -62,7 +62,7 @@ const router = createBrowserRouter([
     children: [{
       element: <Layout />, // Wrap children with layout
       children: [
-        { index: true, element: <HomePage /> },
+        { path: "mywebsite", element: <HomePage /> },
         { path: "login", element: <LoginScreen /> },
         { path: "register", element: <Register /> },
         { path: "services", element: <Services /> },
@@ -199,7 +199,7 @@ const router = createBrowserRouter([
       },
     ],
   },
-], { basename: "/mywebsite" });
+],{ basename: "/mywebsite" });
 
 
 createRoot(document.getElementById("root")!).render(
