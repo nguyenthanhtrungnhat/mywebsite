@@ -1,0 +1,27 @@
+/* Make sidebar sticky only on larger screens */
+@media (min-width: 992px) {
+  .sticky-sidebar {
+    position: sticky;
+    top: 100px;
+  }
+}
+
+/* On mobile, sidebar becomes full-width and scrollspy loses sticky */
+@media (max-width: 991px) {
+  .sticky-sidebar {
+    position: static;
+  }
+}
+
+/* Improve spacing for mobile */
+.scrollspy-example {
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+/* Ensure images scale properly */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
