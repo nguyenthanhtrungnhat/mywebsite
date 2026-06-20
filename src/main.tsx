@@ -204,7 +204,7 @@ const router = createBrowserRouter([
       },
     ],
   },
-]);
+],{ basename: "/mywebsite" });
 
 
 createRoot(document.getElementById("root")!).render(
